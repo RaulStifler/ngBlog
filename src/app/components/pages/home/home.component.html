@@ -1,3 +1,6 @@
+<div class="container-spinner" *ngIf="!posts">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
 <div class="container">
   <mat-card class="post-card" *ngFor="let post of posts">
     <mat-card-header>
@@ -13,5 +16,13 @@
         {{post.contentPost}}
       </p>
     </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <mat-chip-list>
+        <mat-chip color="accent" selected *ngFor="let tag of post.tagsPost">
+          {{tag}}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-actions>
   </mat-card>
 </div>

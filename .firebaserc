@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "stiflerblog-dfcfe": {
+      "hosting": {
+        "ngBlog": [
+          "stiflerblog-dfcfe"
+        ]
+      }
+    }
+  }
+}

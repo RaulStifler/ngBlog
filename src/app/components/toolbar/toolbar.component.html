@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <a class="menu-item" routerLink="/">ngBlog</a>
+  <span class="fill-remaining-space"></span>
+  <a *ngIf="_authService.userData | async" class="menu-item" routerLink="/admin" routerLinkActive="active">
+    <button mat-button>
+      Admin
+    </button>
+  </a>
+  <a class="menu-item" routerLink="/about" routerLinkActive="active">
+    <button mat-button>
+      About
+    </button>
+  </a>
+  <a *ngIf="_authService.userData | async; else showLogin" class="menu-item" (click)="logout()">
+    <button mat-button>
+      Logout
+    </button>
+  </a>
+  <ng-template #showLogin>
+    <a class="menu-item" routerLink="/login" routerLinkActive="active">
+      <button mat-button>
+        Login
+      </button>
+    </a>
+  </ng-template>
+</mat-toolbar>

@@ -9,6 +9,11 @@ import {
   MatSidenavModule,
   MatListModule,
   MatGridListModule,
+  MatProgressSpinnerModule,
+  MatDividerModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatInputModule,
 } from '@angular/material';
 
 const myModule = [
@@ -20,10 +25,14 @@ const myModule = [
   MatSidenavModule,
   MatListModule,
   MatGridListModule,
+  MatProgressSpinnerModule,
+  MatDividerModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatInputModule,
 ]
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     myModule,

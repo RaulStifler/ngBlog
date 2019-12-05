@@ -8,21 +8,36 @@ import { NewPostModule } from './components/posts/new-post/new-post.module';
 import { PostComponent } from './components/posts/post/post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
+
+import { environment } from '../environments/environment';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPostComponent,
-    PostComponent
+    PostComponent,
+    ToolbarComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
     AppRoutingModule,
     NewPostModule,
-    BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    { provide: StorageBucket, useValue: 'gs://stiflerblog-dfcfe.appspot.com' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
