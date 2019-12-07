@@ -17,7 +17,6 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

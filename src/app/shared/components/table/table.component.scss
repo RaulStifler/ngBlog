@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 16px;
+  font-size: 1rem;
+  width: 98%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.container-btn-new {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem;
+  
+  button {
+    background: rgb(25, 134, 15);
+  }
+}
