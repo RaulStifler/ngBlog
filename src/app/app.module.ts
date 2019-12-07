@@ -15,6 +15,7 @@ import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     NewPostComponent,
     PostComponent,
     ToolbarComponent,
+    ContainerAppComponent,
   ],
   imports: [
   BrowserModule,
