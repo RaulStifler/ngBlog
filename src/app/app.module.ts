@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { environment } from '../environments/environment';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
     PostComponent,
     ToolbarComponent,
     ContainerAppComponent,
+    ModalComponent,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -35,7 +38,9 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
     AppRoutingModule,
     NewPostModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
+  entryComponents: [ModalComponent],
   providers: [
     { provide: StorageBucket, useValue: 'gs://stiflerblog-dfcfe.appspot.com' }
   ],

@@ -1,8 +1,8 @@
 export interface Post {
     titlePost: string;
     contentPost: string;
-    imagePost?: string;
-    idPost: string;
+    imagePost?: any;
+    idPost?: string;
     tagsPost: string;
     fileRef?: string;
 }
