@@ -41,8 +41,9 @@ export class TableComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  editarPost(element){
-    console.log('editare ', element);
+  editarPost(post: Post){
+    console.log('editare: ', post);
+    this.openDialog(post);
   }
 
   eliminarPost(post: Post) {
@@ -75,8 +76,15 @@ export class TableComponent implements OnInit, AfterViewInit {
     this.openDialog();
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ModalComponent);
+  openDialog(post?: Post): void {
+    const config = {
+      data: {
+        message: post ? 'Editar post' : 'Nuevo post',
+        content: post,
+      }
+    };
+
+    const dialogRef = this.dialog.open(ModalComponent, config);
     dialogRef.afterClosed().subscribe( res => {
       console.log(res);
     });

@@ -18,6 +18,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ModalComponent } from './shared/components/modal/modal.component';
     ToolbarComponent,
     ContainerAppComponent,
     ModalComponent,
+    EditPostComponent,
   ],
   imports: [
     BrowserModule,

@@ -41,8 +41,12 @@ export class PostService {
     return this.postsCollection.doc(post.idPost).delete();
   }
 
-  updatePostById(post: Post) {
-    return this.postsCollection.doc(post.idPost).update(post);
+  updatePostById(post: Post, newImage?: File) {
+    if(newImage) {
+      this.uploadImage(post, newImage);
+    } else {
+      return this.postsCollection.doc(post.idPost).update(post);
+    }
   }
   
   preSavePost(post: Post, image: File) {
@@ -57,7 +61,12 @@ export class PostService {
       fileRef: this.filePath,
       tagsPost: post.tagsPost,
     };
-    this.postsCollection.add(newPost);
+
+    if (post.idPost) {
+      return this.postsCollection.doc(post.idPost).update(newPost);      
+    } else {
+      return this.postsCollection.add(newPost);
+    }
   }
 
   private uploadImage(post: Post, image: File){
