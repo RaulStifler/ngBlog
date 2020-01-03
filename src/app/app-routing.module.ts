@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostComponent } from './components/posts/post/post.component';
+import { DetailsPostComponent } from './components/posts/details-post/details-post.component';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
         path: 'home', loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule) }, { path: 'posts', loadChildren: () => import('./components/posts/list-posts/list-posts.module').then(m => m.ListPostsModule)
       },
       {
-        path: 'post/:id', component: PostComponent
+        path: 'post/:id', component: DetailsPostComponent
       },
       { path: 'about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule) },
       { path: 'login', loadChildren: () => import('./components/auth/login/login.module').then(m => m.LoginModule) },
@@ -25,6 +25,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

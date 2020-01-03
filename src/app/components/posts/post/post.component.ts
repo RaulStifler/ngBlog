@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostService } from '../../../services/post.service';
 import { Post } from '../../../shared/models/post';
 
@@ -9,12 +8,10 @@ import { Post } from '../../../shared/models/post';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
+  @Input() post: Post;
 
-  constructor(private route: ActivatedRoute, private _postService: PostService) { }
-  public post: Post;
+  constructor(private _postService: PostService) { }
 
-  ngOnInit() {
-    this._postService.getOnePost(this.route.snapshot.params.id).subscribe(res => this.post = res);
-  }
+  ngOnInit() {}
 
 }
